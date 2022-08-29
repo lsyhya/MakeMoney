@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type">
+        <item>buy</item>
+        <item>sell</item>
+    </string-array>
+    <string-array name="pinzhong">
+        <item>EURUSD</item>
+        <item>GBPUSD</item>
+        <item>AUDUSD</item>
+        <item>USDCAD</item>
+        <item>NZDUSD</item>
+        <item>USDCHF</item>
+        <item>XAUUSD</item>
+    </string-array>
+    <string-array name="ceyue">
+        <item>HalfTrend2/1</item>
+        <item>HalfTrend2/2</item>
+        <item>HalfTrend2/3</item>
+        <item>HalfTrend2/4</item>
+        <item>HalfTrend2/5</item>
+    </string-array>
+    <string-array name="time">
+        <item>1min</item>
+        <item>5min</item>
+        <item>15min</item>
+        <item>1h</item>
+        <item>4h</item>
+    </string-array>
+</resources>

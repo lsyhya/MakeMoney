@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/lin_simple"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/tv_pingzhong"
+            android:layout_width="0dp"
+            android:text="EURUSD"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/tv_yingli"
+            android:layout_width="0dp"
+            android:text="+100"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/btn_quxiao"
+            android:text="取消"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginEnd="5dp"
+            android:visibility="gone"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/btn_yingli"
+            android:text="盈利"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginEnd="5dp"
+            android:visibility="gone"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/btn_kuisun"
+            android:text="亏损"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginEnd="5dp"
+            android:visibility="gone"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lin_details"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/lin_simple">
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
