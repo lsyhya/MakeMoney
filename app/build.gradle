@@ -41,6 +41,10 @@ dependencies {
 
     //implementation 'com.haibin:calendarview:3.7.1'
     implementation 'org.greenrobot:greendao:3.3.0'
+    /**
+     * Toast
+     */
+    implementation 'com.github.getActivity:ToastUtils:9.0'
 }
 
 greendao{

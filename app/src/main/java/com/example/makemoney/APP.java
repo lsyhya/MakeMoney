@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.makemoney.db.DaoMaster;
 import com.example.makemoney.db.DaoSession;
+import com.hjq.toast.ToastUtils;
 
 public class APP extends Application {
 
@@ -14,6 +15,11 @@ public class APP extends Application {
     public void onCreate() {
         super.onCreate();
         initDreenDao();
+        initSDK();
+    }
+
+    private void initSDK() {
+        ToastUtils.init(this);
     }
 
     private void initDreenDao() {

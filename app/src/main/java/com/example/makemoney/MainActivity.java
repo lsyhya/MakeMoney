@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.hjq.toast.ToastUtils;
+
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -73,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         btnTime = (Button) findViewById(R.id.btn_time);
         mBtn.setOnClickListener(this);
         btnTime.setOnClickListener(this);
+        spinnerCl.setSelection(1);
+        spinnerTime.setSelection(1);
 
         edStart = (EditText) findViewById(R.id.ed_start);
         edZhisun = (EditText) findViewById(R.id.ed_zhisun);
@@ -124,26 +128,36 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
 
         BigDecimal big_guadan = new BigDecimal(guadan);
         BigDecimal big_zhisun = new BigDecimal(zhisun);
-        BigDecimal big_jizhi = new BigDecimal(jizhi);
 
         BigDecimal dVaule;
+
         if (leixing.equals("buy")) {
             dVaule = big_guadan.subtract(big_zhisun);
             BigDecimal big_yingli = dVaule.add(big_guadan);
             transactions.setStopProfit(big_yingli.doubleValue());
-            if (big_jizhi.doubleValue() > big_yingli.doubleValue()) {
-                transactions.setState(2);
-            } else {
-                transactions.setState(3);
+            if (jizhi!=null&&!jizhi.isEmpty()) {
+                BigDecimal big_jizhi = new BigDecimal(jizhi);
+                if (big_jizhi.doubleValue() > big_yingli.doubleValue()) {
+                    transactions.setState(2);
+                } else {
+                    transactions.setState(3);
+                }
+            }else {
+                transactions.setState(0);
             }
         } else {
             dVaule = big_zhisun.subtract(big_guadan);
             BigDecimal big_yingli = big_guadan.subtract(dVaule);
             transactions.setStopProfit(big_yingli.doubleValue());
-            if (big_jizhi.doubleValue() < big_yingli.doubleValue()) {
-                transactions.setState(2);
-            } else {
-                transactions.setState(3);
+            if (jizhi!=null&&!jizhi.isEmpty()) {
+                BigDecimal big_jizhi = new BigDecimal(jizhi);
+                if (big_jizhi.doubleValue() < big_yingli.doubleValue()) {
+                    transactions.setState(2);
+                } else {
+                    transactions.setState(3);
+                }
+            }else {
+                transactions.setState(0);
             }
         }
 
@@ -151,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         transactions.setProfitOrLossM(30);
         long index = sqlManager.insert(transactions);
         if (index != 0) {
-            Toast.makeText(this, "添加成功", Toast.LENGTH_SHORT).show();
+            ToastUtils.show("添加成功");
         }
 
 

@@ -14,11 +14,11 @@
         <item>XAUUSD</item>
     </string-array>
     <string-array name="ceyue">
-        <item>HalfTrend2/1</item>
+        <item>HalfTrend1/2</item>
         <item>HalfTrend2/2</item>
-        <item>HalfTrend2/3</item>
-        <item>HalfTrend2/4</item>
-        <item>HalfTrend2/5</item>
+        <item>HalfTrend3/2</item>
+        <item>HalfTrend4/2</item>
+        <item>HalfTrend5/2</item>
     </string-array>
     <string-array name="time">
         <item>1min</item>

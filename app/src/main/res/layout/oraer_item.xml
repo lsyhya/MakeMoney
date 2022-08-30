@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/lin_simple"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
@@ -49,14 +49,70 @@
             android:visibility="gone"
             android:layout_height="match_parent"/>
     </LinearLayout>
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lin_details"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:visibility="gone"
-        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/lin_simple">
-    </LinearLayout>
+        <TextView
+            android:id="@+id/details_pz"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="品种:EURUSD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/details_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="时间:2022/10/22 10:25:00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/details_cl"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_pz"
+            android:text="策略:2/2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/details_zq"
+            app:layout_constraintStart_toStartOf="@+id/details_date"
+            app:layout_constraintTop_toBottomOf="@+id/details_pz"
+            android:text="周期:5min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/details_zy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_cl"
+            android:text="止盈:1.23456"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/details_zs"
+            app:layout_constraintStart_toStartOf="@+id/details_date"
+            app:layout_constraintTop_toBottomOf="@+id/details_zq"
+            android:text="止损:1.23456"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/details_jylx"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_zy"
+            android:text="交易类型:buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/details_dv"
+            app:layout_constraintStart_toStartOf="@+id/details_date"
+            app:layout_constraintTop_toBottomOf="@+id/details_zs"
+            android:text="盈损值:0.23456"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
